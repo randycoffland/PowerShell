@@ -50,10 +50,8 @@ if ($mails.totalcount -ne 0)
 
                 $mBody = $mBody + " " + $Mail.Body        
                  $mail.Delete([Microsoft.Exchange.WebServices.Data.DeleteMode]::MoveToDeletedItems)
-                
-               }
+                }
 
-     
              if ($mail.Subject -like "*Complete for Add Party*")
                 {
                  $mailCount2 = $mailCount2 + 1
@@ -62,23 +60,12 @@ if ($mails.totalcount -ne 0)
                  $mBody2 = $mBody2 + " " + $Mail.Body        
                 $mail.Delete([Microsoft.Exchange.WebServices.Data.DeleteMode]::MoveToDeletedItems)
                 
-                 }
-
-
-
-
-
+                }
 
         $View.Offset += $Mails.Items.Count
-     
             }
-
         } while($Mails.MoreAvailable -eq $true)
-
  }     
-
- 
-
 
 if ($mailCount -ne 0 -or $mailCount2 -ne 0)
 {
